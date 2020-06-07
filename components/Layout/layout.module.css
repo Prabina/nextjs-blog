@@ -1,0 +1,27 @@
+.container {
+    max-width: 60rem;
+    padding: 2rem 1rem;
+    margin: 1rem auto 6rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headerImage {
+    width: 6rem;
+    height: 6rem;
+    border: 3px solid #97dcf3;
+}
+
+.headerHomeImage {
+    width: 8rem;
+    height: 8rem;
+    border: 3px solid #97dcf3;
+}
+
+.backToHome {
+    margin: 3rem 0 0;
+}

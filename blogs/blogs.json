@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1",
+    "title": "SSR vs CSR",
+    "date": "2020-01-01",
+    "contentHtml": "<div> <img src='/images/CSR.png' alt='Client Side Rendering Flow image' /></div><div>  <img src='/images/SSR.png'  alt='Server Side Rendering Flow image'/></div>"
+  },
+  {
+    "id": "2",
+    "title": "Introduction to Next Js",
+    "date": "2020-01-02",
+    "contentHtml": "<div>Next JS is a JavaScript framework created by Zeit. It lets you build server-side rendering and static web applications using React. <ul><li>Zero configuration, single command toolchain for react.</li><li>No web pack or similar configuration is required to start working on next project. Just run <code>next dev</code>.</li></ul><strong>Creat Next App</strong>\n<ol style=\"list-style-type:'$ > ';color:#97dcf3\">\n<li><code>mkdir next-app && cd next-app</code></li>\n<li><code>npm init</code></li>\n<li><code>npm i next react react-do —save</code></li>\n<li><code>mkdir pages</code></li>\n<li><code>next build</code></li>\n<li><code>next dev</code></li>\n</ol>\n This will return 404 page as it expects <i>index.js</i> to be present as the default serving page.</div>"
+  },
+  {
+    "id": "3",
+    "title": "Features of Next Js",
+    "date": "2020-01-04",
+    "contentHtml": "<div><ol><li>An intuitive page-based routing system (with support for dynamic routes)</li><li>Pre-rendering, both static generation (SSG) and server-side rendering (SSR) are supported on a per-page basis</li><li>Automatic code splitting for faster page loads</li><li>Client-side routing with optimized prefetching</li><li>Built-in CSS and Sass support, and support for any CSS-in-JS library</li><li>Development environment which supports Hot Module Replacement</li><li>API routes to build API endpoints with Serverless Functions</li><li>Fully extendable</li></ol></div>"
+  },
+  {
+    "id": "4",
+    "title": "Pages and Links",
+    "date": "2020-01-05",
+    "contentHtml": "<div><b>Pages</b> are react component exported from a file in <i>pages/</i> directory. They're associated with routes based on their file names. <p>pages/index.js &nbsp; ---> &nbsp; <i>/</i></p> <p>pages/about.js  &nbsp;---> &nbsp; <i>/about</i></p> <p>pages/blog/first-blog.js  &nbsp;---> &nbsp; <i>/blog/first-blog</i></p><br/><p>When linking between pages on websites you generally use the <span style='color:#97dcf3'><code>&lt;a&gt</code></span> HTML tag.</p> <p>In Next.js, you use the  <span style='color:#97dcf3'><code>&lt;Link&gt;</code></span> React Component that wraps the <span style='color:#97dcf3'><code>&lt;a&gt</code></span> tag. <span style='color:#97dcf3'><code>&lt;Link&gt;</code></span> allows you to do  client-side navigation to a different page in the application. Client-side navigation means that the page transition happens using JavaScript, which is faster than the default navigation done by the browser.</p></div>"
+  },
+  {
+    "id": "5",
+    "title": "Dynamic routes",
+    "date": "2020-01-06",
+    "contentHtml": "<div><img src='/images/dynamic_route.png' alt='Dynamic Routing Flow image' /></div><div><br/>Next.js allows you to statically generate pages with paths that depend on external data. This enables dynamic URLs in Next.js.</br></br><p>In our case, we want to create dynamic pages for this blog:</p> <ul> <li>We want each post to have the path  <span style='color:#97dcf3'>/posts/&lt;id&gt;</span>, where  <span style='color:#97dcf3'>&lt;id&gt;</span> is the id of each blog object present in<i> /blogs/blogs.json </i>.</li> <li>Since we have ids as 1, 2, 3, etc , we’d like the paths to be /posts/1 ,  /posts/2 and so on.</li> </ul><br/>Create a page <span style='color:#97dcf3'>[id]</span> under <i>pages/</i> directory. This page will serve multiple routes. We can have common layout and functions for different blogs.</div>"
+  },
+  {
+    "id": "6",
+    "title": "Pre-rendering and data-fetching",
+    "date": "2020-01-07",
+    "contentHtml": "<div>Next Js <strong>pre-renders</strong> all the pages by default. This helps to improve performance and SEO.<br/>Next Js generates HTML with minimal <i>js</i> code necessary for that page to be visible to the user, in advance. When the page is finally loaded by browser, it's <i>js</i> code is executed making the page interactive. <br> Next Js supports 2 types of pre-rendering : <ul><li>Static Generation</li><li>Server Side Rendering</li></ul>If a Page use <strong>Static Generation</strong>, the page HTML is generated at build time(<code>next build</code>). This HTML will then be re-used on each request.<br/> We can use <span style='color:#97dcf3'>getStaticProps()</span> for <i>static generation</i><br/><br/>In case of <strong>Server Side Rendering</strong>, the page HTML is generated on each request.<br/>we can use <span style='color:#97dcf3'>getServerSideProps()</span> for <i>SSR</i><br/><br/>We can also pre-render a page with some data fetched from external API or database using the above mentioned Next Js functions. They'll will run on server side and won’t even be included in the JS bundle for the browser.</div>"
+
+  }
+]
