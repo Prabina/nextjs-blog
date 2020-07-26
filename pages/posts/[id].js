@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import utilStyles from '../../styles/utils.module.css'
 import Layout from "../../components/Layout/Layout";
-import { getAllBlogsIds, getBlogPosts } from "../../lib/posts";
+import { getAllBlogIds, getBlogPost } from "../../lib/posts";
 import Date from "../../components/Date/Date";
 
 export default function Post({postData}) {
@@ -21,7 +21,7 @@ return <Layout>
 }
 
 export async function getStaticPaths(){
-    const paths= getAllBlogsIds();
+    const paths= getAllBlogIds();
     return {
         paths,
         fallback: false
@@ -29,7 +29,7 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps({params}) {
-    const postData = await getBlogPosts(params.id)
+    const postData = await getBlogPost(params.id)
     return {
         props:{
             postData

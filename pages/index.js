@@ -3,7 +3,7 @@ import Link from "next/link";
 import Date from "../components/Date/Date";
 import Layout, { siteTitle } from '../components/Layout/Layout'
 import utilStyles from '../styles/utils.module.css'
-import {getSortedBlogsData} from "../lib/posts";
+import {getBlogsSortedByDate} from "../lib/posts";
 
 export default function Home({allPostsData}) {
   return (
@@ -50,10 +50,16 @@ export default function Home({allPostsData}) {
 }
 
 export async function getStaticProps() {
-    const allPostsData = getSortedBlogsData()
+    const allPostsData = getBlogsSortedByDate()
     return {
         props: {
             allPostsData
         }
+    }
+}
+
+export function reportWebVitals(metric) {
+    if (metric.label === 'web-vital') {
+        console.log(metric) // The metric object ({ id, name, startTime, value, label }) is logged to the console
     }
 }
